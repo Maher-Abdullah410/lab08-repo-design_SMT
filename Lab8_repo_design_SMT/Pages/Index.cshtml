@@ -1,0 +1,57 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="p-5 mb-4 bg-light rounded-3 shadow-sm border">
+    <div class="container-fluid py-3">
+        <h1 class="display-5 fw-bold text-primary">Lab 8: Repository Design Pattern</h1>
+        <p class="col-md-9 fs-5 text-muted">
+            Product Management System built with <strong>ASP.NET Core Razor Pages</strong> and 
+            <strong>ADO.NET (Microsoft.Data.SqlClient)</strong>, implementing the Repository Pattern 
+            to isolate data access from page business logic.
+        </p>
+        <div class="d-flex gap-2 mt-4">
+            <a asp-page="/Products/Index" class="btn btn-primary btn-lg px-4">
+                <i class="bi bi-box-seam"></i> Go to Products
+            </a>
+            <a asp-page="/Products/Create" class="btn btn-outline-success btn-lg px-4">
+                + Add New Product
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4 py-2">
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0 bg-white">
+            <div class="card-body">
+                <h5 class="card-title text-primary">Repository Pattern</h5>
+                <p class="card-text text-muted">
+                    Encapsulates SQL commands and data-mapping logic inside <code>ProductRepository.cs</code>, decoupling database queries from the Razor Page models.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0 bg-white">
+            <div class="card-body">
+                <h5 class="card-title text-success">Image Management</h5>
+                <p class="card-text text-muted">
+                    Dedicated <code>ProductImageService.cs</code> validates image file types, size constraints, stores files in <code>wwwroot/images/products</code>, and safely cleans up old files.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0 bg-white">
+            <div class="card-body">
+                <h5 class="card-title text-info">Full CRUD Operations</h5>
+                <p class="card-text text-muted">
+                    Complete Create, Read, Update, and Delete workflows with server and client-side validation, error handling, and SQL Server LocalDB integration.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
